@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
 export default function StrokeForm() {
   const [formData, setFormData] = useState({
     gender: "",
@@ -29,7 +30,7 @@ export default function StrokeForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/predict", formData);
+      const res = await axios.post(`${BASE_URL}/predict`, formData);
       setResult(res.data);
     } catch (err) {
       alert("Prediction failed");
