@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = "http://localhost:8000"; // Update with your backend URL
 
 export default function StrokeForm() {
   const [formData, setFormData] = useState({
